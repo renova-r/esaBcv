@@ -163,7 +163,7 @@ BcvPerFoldGivenRank <- function(Y00, Y01, Y10, Y11, r, niter, svd.method,
     if (r ==0)
         return(mean(Y00^2));
     result <- try(ESA(Y11, r, niter = niter, svd.method = svd.method));
-    if (class(result)== "try-error") {
+    if (class(result)[1L] == "try-error") {
         save(Y11, r, file = "problematic.RData")
         print("Encounter problematic data!")
     }
@@ -339,7 +339,7 @@ ComputeSVD <- function(Y, svd.method = "fast", rank = NULL, kmax.r = 10) {
     }
 	if(svd.method == "propack") {
 		svd.Y <- try(suppressWarnings(propack.svd(Y, neig = rank)));
-		if (class(svd.Y) == "try-error" & (rank < min(dim(Y)))) {
+		if (class(svd.Y)[1L] == "try-error" & (rank < min(dim(Y)))) {
 			svd.Y <- suppressWarnings(propack.svd(Y, neig = rank + 1));
 			if (!length(svd.Y$d) == (rank + 1)) {
 				svd.Y <- propack.svd(Y, neig = rank + 1, 
@@ -348,7 +348,7 @@ ComputeSVD <- function(Y, svd.method = "fast", rank = NULL, kmax.r = 10) {
 			svd.Y$u <- svd.Y$u[, 1:rank];
 			svd.Y$v <- svd.Y$v[, 1:rank];
 			svd.Y$d <- svd.Y$d[1:rank];
-		} else if ((class(svd.Y) == "try-error") | (length(svd.Y$d) != rank)) {
+		} else if ((class(svd.Y)[1L] == "try-error") | (length(svd.Y$d) != rank)) {
 			warning("PROPACK fails, used fast.svd to compute SVD instead!!");
 			svd.Y <- ComputeSVD(Y, "fast", rank);
 		}

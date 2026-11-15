@@ -1,9 +1,10 @@
 Package: esaBcv
 Title: Estimate Number of Latent Factors and Factor Matrix for Factor
         Analysis
-Version: 1.2.1.1
+Version: 1.2.1.1.9001
 Authors@R: c(person(c("Art", "B."), "Owen", role = c("aut")), person("Jingshu", "Wang", email = "wangjingshususan@gmail.com", role = c("aut", "cre")) )
-Description: These functions estimate the latent factors of a given matrix, no matter it is high-dimensional or not. It tries to first estimate the number of factors using bi-cross-validation and then estimate the latent factor matrix and the noise variances. For more information about the method, see Art B. Owen and Jingshu Wang 2015 archived article on factor model (<arXiv:1503.03515>). 
+Description: These functions estimate the latent factors of a given matrix, no matter it is high-dimensional or not. It tries to first estimate the number of factors using bi-cross-validation and then estimate the latent factor matrix and the noise variances. For more information about the method, see Art B. Owen and Jingshu Wang 2015 archived article on factor model (<doi:10.48550/arXiv.1503.03515>). 
+    Compatibility updates by Renova.
 Depends: R (>= 3.0.2)
 License: GPL (>= 2)
 LazyData: true

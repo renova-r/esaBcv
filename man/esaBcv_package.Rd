@@ -3,7 +3,7 @@
 \docType{package}
 \name{esaBcv_package}
 \alias{esaBcv_package}
-\alias{esaBcv_package-package}
+\alias{esaBcv-package}
 \title{esaBcv}
 \description{
 The esaBcv package provides functions to estimate the latent factors of a given
