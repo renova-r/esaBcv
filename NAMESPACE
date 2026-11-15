@@ -1,0 +1,8 @@
+S3method(plot,esabcv)
+export(ESA)
+export(EsaBcv)
+importFrom(corpcor,fast.svd)
+importFrom(svd,propack.svd)
+
+importFrom("graphics", "axis", "points", "title")
+importFrom("stats", "var")
